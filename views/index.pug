@@ -1,0 +1,50 @@
+doctype html
+html(lang="fr")
+	head
+		title MiniChat
+		style
+			include style.css
+			link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.13/css/all.css')
+			link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto')
+			link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911')
+		script(src='/socket.io/socket.io.js')
+		script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+	body
+		header
+			h1 MiniChat
+		main
+			div(id="center")
+				aside
+						nav
+							h3 Channels
+							div(class="channels")
+								div
+									ul
+										li(class="active")
+							div(class='addChannel')
+								input(type="text" placeholder="New channel name" id="channelName")
+								button(class="myButton small" id="addChannelBtn") Add
+							h3 Users
+							div(class="users")
+								ul
+
+				section(id="messages")
+					div(id="messagescontainer")
+
+			div(id="bottomBar")
+				div(class="isTyping")
+					span
+				div(class="inputContainer")
+					textarea(placeholder="Ecrivez votre message..." id="writezone")
+					button(type="button" id="sendBtn" class="myButton") Send
+				div(class="optionsContainer")
+					div(class="left")
+						input(type="color" value="#124578" id="userColor")
+						div(class="smileys")
+					div(class="right")
+						
+
+		footer
+
+		script
+			include events.js
